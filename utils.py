@@ -70,3 +70,32 @@ def reorder(mypoints):
     mypointsNew[2] = mypoints[np.argmax(diff)] # [ 0, h ]
     # print(diff)
     return mypointsNew
+
+def splitBoxes(img):
+    rows = np.vsplit(img,5)
+    boxes = []
+    for r in rows:
+        cols = np.hsplit(r,5)
+        for box in cols:
+            boxes.append(box)
+            # cv2.imshow('box',box)
+    # cv2.imshow('row1',rows[0])
+    return boxes
+
+def showAnswers(img, myIndex, grading,ans,questions,choices):
+    secW = img.shape[1] // questions
+    secH = img.shape[0] // choices
+
+    for x in range(0,questions):
+        myAns = myIndex[x]
+        cX = (myAns * secW) + secW//2
+        cY = (x*secH) + secH//2
+        if grading[x] == 1:
+            myColor = (0,255,0)
+        else:
+            myColor = (0,0,255)
+            correctAns = ans[x]
+            cv2.circle(img, ((correctAns*secW)+secW//2,(x*secH)+secH//2),35,(0,255,0),cv2.FILLED)
+        cv2.circle(img,(cX,cY),35,myColor,cv2.FILLED)
+    
+    return img
