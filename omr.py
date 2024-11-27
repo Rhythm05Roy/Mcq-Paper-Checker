@@ -12,7 +12,7 @@ ans = [1,2,0,1,4]
 webCamFeed = True
 
 url = 'http://192.168.0.1.103.8080'
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 cap.set(10,150)
 
 while True:
@@ -25,7 +25,7 @@ while True:
 
     try:
     # Pre-processing
-        img = cv2.imread(path)
+        # img = cv2.imread(path)
         img = cv2.resize(img, (width, width))
         imgContours = img.copy()
         imgbiggestContours = img.copy()
