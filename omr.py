@@ -12,7 +12,7 @@ ans = [1,2,0,1,4]
 webCamFeed = True
 
 url = 'http://192.168.0.1.103.8080'
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture('/dev/video2')
 cap.set(10,150)
 
 while True:
