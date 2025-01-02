@@ -20,12 +20,12 @@ This project is a web-based Optical Mark Recognition (OMR) grading system built 
 
 1. Clone the repository:
    ```bash
-   https://github.com/Rhythm05Roy/Mcq-Paper-Checler.git
+   https://github.com/Rhythm05Roy/Mcq-Paper-Checker.git
    ```
 
 2. Navigate to the project directory:
    ```bash
-   cd Mcq-Paper-Checler
+   cd Mcq-Paper-Checker
    ```
 
 3. Install the required dependencies:
